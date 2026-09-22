@@ -1,0 +1,780 @@
+/* =========================================================
+   ASCUBE INFOLABS
+   FOOTER
+========================================================= */
+
+.site-footer {
+  width: 100%;
+
+  color: #ffffff;
+
+  background: #061329;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.footer-cta {
+  position: relative;
+
+  min-height: 520px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    100px 24px;
+
+  overflow: hidden;
+
+  background-image:
+    url("/images/ascube-hero.png");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+
+/* Dark overlay */
+
+.footer-cta-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 17, 42, 0.97) 0%,
+      rgba(3, 20, 48, 0.88) 42%,
+      rgba(4, 27, 60, 0.76) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* Blue ambient glow */
+
+.footer-cta::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  right: -180px;
+  top: -150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(29, 98, 230, 0.30),
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.footer-cta-content {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(
+    100%,
+    900px
+  );
+
+  text-align: center;
+}
+
+
+.footer-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  color: #72a5ff;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+
+.footer-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #4f8cff;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(79, 140, 255, 0.14);
+}
+
+
+.footer-cta-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      48px,
+      6vw,
+      78px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+}
+
+
+.footer-cta-content h2 span {
+  color: #4e8cff;
+}
+
+
+.footer-cta-content p {
+  width: min(
+    100%,
+    650px
+  );
+
+  margin:
+    27px auto 0;
+
+  color: #bdcbe0;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.footer-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 54px;
+
+  margin-top: 32px;
+
+  padding:
+    0 26px;
+
+  border-radius: 9px;
+
+  background: #1555d9;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 15px 35px
+    rgba(15, 82, 211, 0.30);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.footer-cta-button:hover {
+  background: #2467ec;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 20px 45px
+    rgba(15, 82, 211, 0.40);
+}
+
+
+.footer-cta-button svg {
+  transition:
+    transform 0.2s ease;
+}
+
+
+.footer-cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer-main {
+  background:
+    #061329;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+.footer-container {
+  width: min(
+    1280px,
+    calc(100% - 80px)
+  );
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.6fr
+    1fr
+    1fr
+    0.85fr
+    1.25fr;
+
+  gap: 45px;
+
+  padding:
+    75px 0;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+  max-width: 310px;
+}
+
+
+.footer-logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+
+.footer-logo img {
+  width: 155px;
+
+  height: auto;
+
+  display: block;
+}
+
+
+.footer-brand p {
+  margin:
+    25px 0 22px;
+
+  color: #91a2bc;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+.footer-location {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: #aab9cf;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+.footer-location svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: #4f8cff;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column h3 {
+  margin:
+    0 0 22px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+
+.footer-column ul {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.footer-column li a {
+  color: #8e9eb6;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.footer-column li a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 13px;
+
+  color: #9aabc3;
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.footer-contact-item:hover {
+  color: #ffffff;
+}
+
+
+.footer-contact-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #5c95ff;
+}
+
+
+.footer-contact-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 12px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+.footer-contact-link svg {
+  color: #5c95ff;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.footer-contact-link:hover svg {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.footer-bottom {
+  background:
+    #041024;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+.footer-bottom-container {
+  width: min(
+    1280px,
+    calc(100% - 80px)
+  );
+
+  min-height: 70px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #71839e;
+
+  font-size: 11px;
+}
+
+
+.footer-legal {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+
+.footer-legal a {
+  color: #71839e;
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.footer-legal a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .footer-container {
+    width: min(
+      calc(100% - 50px),
+      1100px
+    );
+
+    grid-template-columns:
+      1.5fr
+      1fr
+      1fr;
+
+    row-gap: 50px;
+  }
+
+  .footer-brand {
+    max-width: 350px;
+  }
+
+  .footer-bottom-container {
+    width: min(
+      calc(100% - 50px),
+      1100px
+    );
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .footer-cta {
+    min-height: 470px;
+
+    padding:
+      80px 20px;
+  }
+
+
+  .footer-cta-content h2 {
+    font-size:
+      clamp(
+        42px,
+        10vw,
+        60px
+      );
+  }
+
+
+  .footer-cta-content p {
+    font-size: 14px;
+  }
+
+
+  .footer-container {
+    width: calc(100% - 40px);
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 45px 30px;
+
+    padding:
+      60px 0;
+  }
+
+
+  .footer-brand {
+    grid-column:
+      1 / -1;
+
+    max-width: 500px;
+  }
+
+
+  .footer-bottom-container {
+    width: calc(100% - 40px);
+
+    min-height: auto;
+
+    padding:
+      22px 0;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .footer-cta {
+    min-height: 450px;
+
+    background-position:
+      62% center;
+  }
+
+
+  .footer-cta-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 17, 42, 0.96),
+        rgba(3, 20, 48, 0.90)
+      );
+  }
+
+
+  .footer-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+  }
+
+
+  .footer-cta-content h2 {
+    font-size:
+      clamp(
+        38px,
+        11vw,
+        52px
+      );
+  }
+
+
+  .footer-cta-content p {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+
+  .footer-cta-button {
+    width: 100%;
+
+    max-width: 280px;
+  }
+
+
+  .footer-container {
+    width: calc(100% - 32px);
+
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding:
+      55px 0;
+  }
+
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+
+  .footer-brand p {
+    font-size: 12px;
+  }
+
+
+  .footer-bottom-container {
+    width: calc(100% - 32px);
+  }
+
+
+  .footer-legal {
+    flex-wrap: wrap;
+
+    gap: 12px 20px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .footer-cta {
+    min-height: 430px;
+  }
+
+
+  .footer-cta-content h2 {
+    font-size: 36px;
+  }
+
+
+  .footer-container {
+    width: calc(100% - 28px);
+  }
+
+
+  .footer-bottom-container {
+    width: calc(100% - 28px);
+  }
+
+}
