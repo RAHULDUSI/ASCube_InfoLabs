@@ -114,12 +114,12 @@ export default function Footer() {
             >
               <img
                 src={ascubeLogo}
-                alt="ASCube InfoLabs"
+                alt="A S Cube InfoLabs"
               />
             </a>
 
             <p>
-              ASCube InfoLabs delivers end-to-end
+              A S Cube InfoLabs delivers end-to-end
               technology solutions that help businesses
               innovate, transform and scale.
             </p>
@@ -217,7 +217,7 @@ export default function Footer() {
                 info@ascubeinfolabs.com
               </span>
             </a>
-
+{/* 
             <a
               href="tel:+910000000000"
               className="footer-contact-item"
@@ -227,9 +227,9 @@ export default function Footer() {
               </span>
 
               <span>
-                +91 00000 00000
+                
               </span>
-            </a>
+            </a> */}
 
             <a
               href="/contact"

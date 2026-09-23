@@ -1,6 +1,14 @@
 import { useState } from "react";
-import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import {
+  ChevronDown,
+  Menu,
+  X,
+  ArrowUpRight,
+} from "lucide-react";
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 import logo from "../../assets/logos/ascube-logo.png";
 
@@ -9,27 +17,33 @@ import "./Navbar.css";
 const services = [
   {
     title: "Software Engineering",
-    description: "Scalable software solutions for modern businesses.",
+    description:
+      "Scalable software solutions for modern businesses.",
   },
   {
     title: "Web Development",
-    description: "High-performance web applications and experiences.",
+    description:
+      "High-performance web applications and experiences.",
   },
   {
     title: "Mobile Applications",
-    description: "Engaging mobile experiences across platforms.",
+    description:
+      "Engaging mobile experiences across platforms.",
   },
   {
     title: "AI & Intelligent Solutions",
-    description: "AI, automation and intelligent business solutions.",
+    description:
+      "AI, automation and intelligent business solutions.",
   },
   {
     title: "Cloud & DevOps",
-    description: "Cloud infrastructure, automation and deployment.",
+    description:
+      "Cloud infrastructure, automation and deployment.",
   },
   {
     title: "Data & Analytics",
-    description: "Data engineering, analytics and actionable insights.",
+    description:
+      "Data engineering, analytics and actionable insights.",
   },
 ];
 
@@ -49,14 +63,41 @@ const industries = [
 ];
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] =
+    useState(false);
+
+  const [openMobileDropdown, setOpenMobileDropdown] =
+    useState(null);
+
+  const location = useLocation();
+
+  /* =========================================
+     ACTIVE ROUTE
+  ========================================= */
+
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    return location.pathname.startsWith(path);
+  };
+
+  /* =========================================
+     MOBILE DROPDOWN
+  ========================================= */
 
   const toggleMobileDropdown = (menu) => {
     setOpenMobileDropdown(
-      openMobileDropdown === menu ? null : menu
+      openMobileDropdown === menu
+        ? null
+        : menu
     );
   };
+
+  /* =========================================
+     CLOSE MOBILE MENU
+  ========================================= */
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
@@ -68,7 +109,9 @@ export default function Navbar() {
 
       <div className="navbar-container">
 
-        {/* ================= LOGO ================= */}
+        {/* =====================================
+            LOGO
+        ===================================== */}
 
         <Link
           to="/"
@@ -82,71 +125,128 @@ export default function Navbar() {
           />
 
           <div className="brand-text">
-            <span className="brand-name">ASCube</span>
-            <span className="brand-subtitle">INFOLABS</span>
+            <span className="brand-name">
+              A S Cube
+            </span>
+
+            <span className="brand-subtitle">
+              INFOLABS
+            </span>
           </div>
         </Link>
 
 
-        {/* ================= DESKTOP NAV ================= */}
+        {/* =====================================
+            DESKTOP NAVIGATION
+        ===================================== */}
 
         <nav className="desktop-nav">
 
-          <Link to="/" className="nav-link">
+          {/* HOME */}
+
+          <Link
+            to="/"
+            className={`nav-link ${
+              isActive("/")
+                ? "active"
+                : ""
+            }`}
+          >
+            {isActive("/") && (
+              <span className="active-dot"></span>
+            )}
+
             Home
           </Link>
 
 
-          {/* SERVICES */}
+          {/* ===================================
+              SERVICES
+          =================================== */}
 
           <div className="nav-dropdown">
 
-            <button className="nav-link dropdown-trigger">
+            <button
+              className={`nav-link dropdown-trigger ${
+                isActive("/services")
+                  ? "active"
+                  : ""
+              }`}
+            >
+              {isActive("/services") && (
+                <span className="active-dot"></span>
+              )}
+
               Services
+
               <ChevronDown size={14} />
             </button>
+
 
             <div className="dropdown-menu services-menu">
 
               <div className="dropdown-header">
-                <span>OUR EXPERTISE</span>
+
+                <span>
+                  OUR EXPERTISE
+                </span>
 
                 <p>
-                  Technology solutions designed around
-                  your business.
+                  Technology solutions designed
+                  around your business.
                 </p>
+
               </div>
+
 
               <div className="services-dropdown-grid">
 
-                {services.map((service, index) => (
-                  <Link
-                    to="/services"
-                    className="service-dropdown-item"
-                    key={service.title}
-                  >
-                    <span className="dropdown-number">
-                      0{index + 1}
-                    </span>
+                {services.map(
+                  (service, index) => (
 
-                    <div>
-                      <strong>{service.title}</strong>
+                    <Link
+                      to="/services"
+                      className="service-dropdown-item"
+                      key={service.title}
+                    >
 
-                      <p>{service.description}</p>
-                    </div>
+                      <span className="dropdown-number">
+                        0{index + 1}
+                      </span>
 
-                    <ArrowUpRight size={15} />
-                  </Link>
-                ))}
+                      <div>
+
+                        <strong>
+                          {service.title}
+                        </strong>
+
+                        <p>
+                          {service.description}
+                        </p>
+
+                      </div>
+
+                      <ArrowUpRight
+                        size={15}
+                      />
+
+                    </Link>
+
+                  )
+                )}
 
               </div>
+
 
               <Link
                 to="/services"
                 className="dropdown-footer-link"
               >
                 Explore all services
-                <ArrowUpRight size={15} />
+
+                <ArrowUpRight
+                  size={15}
+                />
               </Link>
 
             </div>
@@ -154,52 +254,89 @@ export default function Navbar() {
           </div>
 
 
-          {/* INDUSTRIES */}
+          {/* ===================================
+              INDUSTRIES
+          =================================== */}
 
           <div className="nav-dropdown">
 
-            <button className="nav-link dropdown-trigger">
+            <button
+              className={`nav-link dropdown-trigger ${
+                isActive("/industries")
+                  ? "active"
+                  : ""
+              }`}
+            >
+              {isActive("/industries") && (
+                <span className="active-dot"></span>
+              )}
+
               Industries
+
               <ChevronDown size={14} />
             </button>
+
 
             <div className="dropdown-menu industries-menu">
 
               <div className="dropdown-header">
-                <span>INDUSTRIES WE SERVE</span>
+
+                <span>
+                  INDUSTRIES WE SERVE
+                </span>
 
                 <p>
-                  Technology expertise adapted to
-                  different business environments.
+                  Technology expertise adapted
+                  to different business
+                  environments.
                 </p>
+
               </div>
+
 
               <div className="industries-dropdown-grid">
 
-                {industries.map((industry, index) => (
-                  <Link
-                    to="/industries"
-                    className="industry-dropdown-item"
-                    key={industry}
-                  >
-                    <span>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                {industries.map(
+                  (industry, index) => (
 
-                    <strong>{industry}</strong>
+                    <Link
+                      to="/industries"
+                      className="industry-dropdown-item"
+                      key={industry}
+                    >
 
-                    <ArrowUpRight size={14} />
-                  </Link>
-                ))}
+                      <span>
+                        {String(index + 1).padStart(
+                          2,
+                          "0"
+                        )}
+                      </span>
+
+                      <strong>
+                        {industry}
+                      </strong>
+
+                      <ArrowUpRight
+                        size={14}
+                      />
+
+                    </Link>
+
+                  )
+                )}
 
               </div>
+
 
               <Link
                 to="/industries"
                 className="dropdown-footer-link"
               >
                 Explore industries
-                <ArrowUpRight size={15} />
+
+                <ArrowUpRight
+                  size={15}
+                />
               </Link>
 
             </div>
@@ -207,192 +344,335 @@ export default function Navbar() {
           </div>
 
 
+          {/* TECHNOLOGIES */}
+
           <Link
             to="/technologies"
-            className="nav-link"
+            className={`nav-link ${
+              isActive("/technologies")
+                ? "active"
+                : ""
+            }`}
           >
+            {isActive("/technologies") && (
+              <span className="active-dot"></span>
+            )}
+
             Technologies
           </Link>
 
+
+          {/* CASE STUDIES */}
+
           <Link
             to="/case-studies"
-            className="nav-link"
+            className={`nav-link ${
+              isActive("/case-studies")
+                ? "active"
+                : ""
+            }`}
           >
+            {isActive("/case-studies") && (
+              <span className="active-dot"></span>
+            )}
+
             Case Studies
           </Link>
 
+
+          {/* ABOUT */}
+
           <Link
             to="/about"
-            className="nav-link"
+            className={`nav-link ${
+              isActive("/about")
+                ? "active"
+                : ""
+            }`}
           >
+            {isActive("/about") && (
+              <span className="active-dot"></span>
+            )}
+
             About
           </Link>
 
+
+          {/* CAREERS */}
+
           <Link
             to="/careers"
-            className="nav-link"
+            className={`nav-link ${
+              isActive("/careers")
+                ? "active"
+                : ""
+            }`}
           >
+            {isActive("/careers") && (
+              <span className="active-dot"></span>
+            )}
+
             Careers
           </Link>
 
         </nav>
 
 
-        {/* ================= DESKTOP CTA ================= */}
+        {/* =====================================
+            DESKTOP CTA
+        ===================================== */}
 
         <Link
           to="/contact"
           className="navbar-cta"
         >
           Let's Talk
+
           <ArrowUpRight size={16} />
         </Link>
 
 
-        {/* ================= MOBILE BUTTON ================= */}
+        {/* =====================================
+            MOBILE MENU BUTTON
+        ===================================== */}
 
         <button
           className="mobile-menu-button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          onClick={() =>
+            setMobileMenuOpen(
+              !mobileMenuOpen
+            )
+          }
           aria-label="Toggle navigation"
         >
+
           {mobileMenuOpen ? (
             <X size={24} />
           ) : (
             <Menu size={24} />
           )}
+
         </button>
 
       </div>
 
 
-      {/* ================= MOBILE NAV ================= */}
+      {/* =======================================
+          MOBILE NAVIGATION
+      ======================================= */}
 
       <div
         className={`mobile-nav ${
-          mobileMenuOpen ? "mobile-nav-open" : ""
+          mobileMenuOpen
+            ? "mobile-nav-open"
+            : ""
         }`}
       >
 
+        {/* HOME */}
+
         <Link
           to="/"
-          className="mobile-nav-link"
+          className={`mobile-nav-link ${
+            isActive("/")
+              ? "mobile-active"
+              : ""
+          }`}
           onClick={closeMobileMenu}
         >
           Home
         </Link>
 
 
-        {/* MOBILE SERVICES */}
+        {/* =====================================
+            MOBILE SERVICES
+        ===================================== */}
 
         <div className="mobile-dropdown">
 
           <button
-            className="mobile-dropdown-button"
-            onClick={() => toggleMobileDropdown("services")}
+            className={`mobile-dropdown-button ${
+              isActive("/services")
+                ? "mobile-active"
+                : ""
+            }`}
+            onClick={() =>
+              toggleMobileDropdown(
+                "services"
+              )
+            }
           >
-            <span>Services</span>
+
+            <span>
+              Services
+            </span>
 
             <ChevronDown
               size={18}
               className={
-                openMobileDropdown === "services"
+                openMobileDropdown ===
+                "services"
                   ? "rotate-icon"
                   : ""
               }
             />
+
           </button>
 
-          {openMobileDropdown === "services" && (
+
+          {openMobileDropdown ===
+            "services" && (
+
             <div className="mobile-dropdown-content">
 
-              {services.map((service) => (
-                <Link
-                  to="/services"
-                  key={service.title}
-                  onClick={closeMobileMenu}
-                >
-                  {service.title}
-                </Link>
-              ))}
+              {services.map(
+                (service) => (
+
+                  <Link
+                    to="/services"
+                    key={service.title}
+                    onClick={
+                      closeMobileMenu
+                    }
+                  >
+                    {service.title}
+                  </Link>
+
+                )
+              )}
 
             </div>
+
           )}
 
         </div>
 
 
-        {/* MOBILE INDUSTRIES */}
+        {/* =====================================
+            MOBILE INDUSTRIES
+        ===================================== */}
 
         <div className="mobile-dropdown">
 
           <button
-            className="mobile-dropdown-button"
-            onClick={() => toggleMobileDropdown("industries")}
+            className={`mobile-dropdown-button ${
+              isActive("/industries")
+                ? "mobile-active"
+                : ""
+            }`}
+            onClick={() =>
+              toggleMobileDropdown(
+                "industries"
+              )
+            }
           >
-            <span>Industries</span>
+
+            <span>
+              Industries
+            </span>
 
             <ChevronDown
               size={18}
               className={
-                openMobileDropdown === "industries"
+                openMobileDropdown ===
+                "industries"
                   ? "rotate-icon"
                   : ""
               }
             />
+
           </button>
 
-          {openMobileDropdown === "industries" && (
+
+          {openMobileDropdown ===
+            "industries" && (
+
             <div className="mobile-dropdown-content">
 
-              {industries.map((industry) => (
-                <Link
-                  to="/industries"
-                  key={industry}
-                  onClick={closeMobileMenu}
-                >
-                  {industry}
-                </Link>
-              ))}
+              {industries.map(
+                (industry) => (
+
+                  <Link
+                    to="/industries"
+                    key={industry}
+                    onClick={
+                      closeMobileMenu
+                    }
+                  >
+                    {industry}
+                  </Link>
+
+                )
+              )}
 
             </div>
+
           )}
 
         </div>
 
+
+        {/* TECHNOLOGIES */}
 
         <Link
           to="/technologies"
-          className="mobile-nav-link"
+          className={`mobile-nav-link ${
+            isActive("/technologies")
+              ? "mobile-active"
+              : ""
+          }`}
           onClick={closeMobileMenu}
         >
           Technologies
         </Link>
 
+
+        {/* CASE STUDIES */}
+
         <Link
           to="/case-studies"
-          className="mobile-nav-link"
+          className={`mobile-nav-link ${
+            isActive("/case-studies")
+              ? "mobile-active"
+              : ""
+          }`}
           onClick={closeMobileMenu}
         >
           Case Studies
         </Link>
 
+
+        {/* ABOUT */}
+
         <Link
           to="/about"
-          className="mobile-nav-link"
+          className={`mobile-nav-link ${
+            isActive("/about")
+              ? "mobile-active"
+              : ""
+          }`}
           onClick={closeMobileMenu}
         >
           About
         </Link>
 
+
+        {/* CAREERS */}
+
         <Link
           to="/careers"
-          className="mobile-nav-link"
+          className={`mobile-nav-link ${
+            isActive("/careers")
+              ? "mobile-active"
+              : ""
+          }`}
           onClick={closeMobileMenu}
         >
           Careers
         </Link>
 
+
+        {/* MOBILE CTA */}
 
         <Link
           to="/contact"
@@ -400,7 +680,10 @@ export default function Navbar() {
           onClick={closeMobileMenu}
         >
           Let's Talk
-          <ArrowUpRight size={17} />
+
+          <ArrowUpRight
+            size={17}
+          />
         </Link>
 
       </div>
