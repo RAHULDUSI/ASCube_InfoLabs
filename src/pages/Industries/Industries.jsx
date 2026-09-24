@@ -1,21 +1,18 @@
 import {
+  ArrowRight,
   ArrowUpRight,
-  Activity,
-  Landmark,
-  GraduationCap,
-  ShoppingBag,
   Building2,
-  Factory,
-  Truck,
   Car,
-  Hotel,
+  GraduationCap,
+  HeartPulse,
+  Landmark,
+  ShoppingBag,
+  Truck,
   Plane,
-  Film,
-  Rocket,
-  ShieldCheck,
-  BarChart3,
-  Cloud,
-  BrainCircuit,
+  Factory,
+  Home,
+  Utensils,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -24,201 +21,166 @@ import "./Industries.css";
 
 const industries = [
   {
-    number: "01",
-    title: "Healthcare",
     slug: "healthcare",
-    icon: Activity,
+    title: "Healthcare",
     description:
-      "Connected digital solutions that improve patient experiences, operational visibility, and healthcare workflows.",
-    capabilities: [
-      "Healthcare platforms",
-      "Patient engagement",
-      "Workflow automation",
-      "Analytics & reporting",
-    ],
+      "Digital platforms, intelligent workflows, patient engagement, and connected healthcare experiences.",
+    icon: HeartPulse,
   },
   {
-    number: "02",
-    title: "Banking & Finance",
     slug: "banking-finance",
+    title: "Banking & Finance",
+    description:
+      "Secure digital banking, financial platforms, analytics, automation, and intelligent operations.",
     icon: Landmark,
-    description:
-      "Secure and intelligent financial technology built for digital banking, analytics, automation, and customer experiences.",
-    capabilities: [
-      "Digital banking",
-      "Financial platforms",
-      "Risk analytics",
-      "Process automation",
-    ],
   },
   {
-    number: "03",
-    title: "Education",
     slug: "education",
+    title: "Education",
+    description:
+      "Learning platforms, student experiences, institutional systems, and intelligent education technology.",
     icon: GraduationCap,
-    description:
-      "Technology platforms that connect students, educators, institutions, and learning experiences.",
-    capabilities: [
-      "Learning platforms",
-      "Student systems",
-      "Virtual classrooms",
-      "Education analytics",
-    ],
   },
   {
-    number: "04",
+    slug: "retail-e-commerce",
     title: "Retail & E-Commerce",
-    slug: "retail-ecommerce",
+    description:
+      "Scalable commerce platforms, customer experiences, inventory systems, and retail intelligence.",
     icon: ShoppingBag,
-    description:
-      "Digital commerce experiences designed to improve customer engagement, operations, and business growth.",
-    capabilities: [
-      "E-commerce platforms",
-      "Customer experiences",
-      "Inventory systems",
-      "Business analytics",
-    ],
   },
   {
-    number: "05",
-    title: "Real Estate",
     slug: "real-estate",
-    icon: Building2,
+    title: "Real Estate",
     description:
-      "Digital platforms that simplify property discovery, management, transactions, and customer engagement.",
-    capabilities: [
-      "Property platforms",
-      "Lead management",
-      "Property analytics",
-      "Digital experiences",
-    ],
+      "Property platforms, lead management, automation, analytics, and connected real-estate operations.",
+    icon: Home,
   },
   {
-    number: "06",
-    title: "Manufacturing",
     slug: "manufacturing",
+    title: "Manufacturing",
+    description:
+      "Connected operations, workflow automation, analytics, supply-chain visibility, and industrial platforms.",
     icon: Factory,
-    description:
-      "Connected technology solutions that improve production visibility, operational efficiency, and decision-making.",
-    capabilities: [
-      "Process automation",
-      "Operations platforms",
-      "IoT integration",
-      "Production analytics",
-    ],
   },
   {
-    number: "07",
-    title: "Logistics",
     slug: "logistics",
+    title: "Logistics",
+    description:
+      "Fleet intelligence, route optimization, tracking, automation, and logistics management systems.",
     icon: Truck,
-    description:
-      "Technology solutions that bring visibility, intelligence, and automation to complex logistics operations.",
-    capabilities: [
-      "Fleet management",
-      "Route intelligence",
-      "Tracking platforms",
-      "Operational analytics",
-    ],
   },
   {
-    number: "08",
-    title: "Automotive",
     slug: "automotive",
+    title: "Automotive",
+    description:
+      "Connected vehicle experiences, service platforms, fleet systems, and automotive intelligence.",
     icon: Car,
-    description:
-      "Connected automotive technology focused on mobility, service operations, customer experience, and intelligence.",
-    capabilities: [
-      "Mobility platforms",
-      "Vehicle services",
-      "Connected systems",
-      "Predictive analytics",
-    ],
   },
   {
-    number: "09",
-    title: "Hospitality",
     slug: "hospitality",
-    icon: Hotel,
+    title: "Hospitality",
     description:
-      "Digital experiences and operational platforms that help hospitality businesses serve customers more efficiently.",
-    capabilities: [
-      "Guest experiences",
-      "Booking platforms",
-      "Operations systems",
-      "Business intelligence",
-    ],
+      "Guest experiences, booking platforms, operational systems, and hospitality automation.",
+    icon: Utensils,
   },
   {
-    number: "10",
-    title: "Travel & Tourism",
     slug: "travel-tourism",
+    title: "Travel & Tourism",
+    description:
+      "Travel platforms, booking experiences, personalization, and intelligent travel operations.",
     icon: Plane,
-    description:
-      "Technology platforms that make travel discovery, booking, operations, and customer engagement more connected.",
-    capabilities: [
-      "Travel platforms",
-      "Booking systems",
-      "Personalization",
-      "Travel analytics",
-    ],
   },
   {
-    number: "11",
-    title: "Media & Entertainment",
     slug: "media-entertainment",
-    icon: Film,
+    title: "Media & Entertainment",
     description:
-      "Digital products that help media and entertainment businesses create engaging and scalable experiences.",
-    capabilities: [
-      "Digital platforms",
-      "Content systems",
-      "Audience analytics",
-      "Personalization",
-    ],
+      "Digital experiences, content platforms, audience intelligence, and scalable media technology.",
+    icon: BriefcaseBusiness,
   },
   {
-    number: "12",
-    title: "Startups & SMEs",
     slug: "startups-smes",
-    icon: Rocket,
+    title: "Startups & SMEs",
     description:
-      "Flexible technology partnerships for startups and growing businesses looking to build, launch, and scale.",
-    capabilities: [
-      "MVP development",
-      "Product engineering",
-      "Cloud solutions",
-      "Technology strategy",
-    ],
+      "Modern digital products, automation, scalable architecture, and technology built for growth.",
+    icon: Building2,
   },
 ];
 
-const capabilities = [
-  {
-    icon: BrainCircuit,
-    title: "AI & Intelligent Systems",
-    description:
-      "AI-powered products, automation, intelligent workflows, and decision-support systems.",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & Digital Platforms",
-    description:
-      "Cloud-native applications and scalable digital infrastructure designed for growth.",
-  },
-  {
-    icon: BarChart3,
-    title: "Data & Analytics",
-    description:
-      "Turn operational and customer data into meaningful insights and measurable outcomes.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Security & Reliability",
-    description:
-      "Secure architectures, reliable systems, and engineering practices designed for production.",
-  },
-];
+function HeroVisual() {
+  return (
+    <div className="industries-hero-visual">
+
+      {/* Background glow */}
+      <div className="hero-visual-glow" />
+
+      {/* Decorative rings */}
+      <div className="hero-ring hero-ring-one" />
+      <div className="hero-ring hero-ring-two" />
+
+      {/* Large background panel */}
+      <div className="visual-back-panel" />
+
+      {/* Main dark panel */}
+      <div className="visual-main-panel">
+
+        <div className="visual-main-icon">
+          <span>✦</span>
+        </div>
+
+        <span className="visual-eyebrow">
+          ASCUBE INFOLABS
+        </span>
+
+        <h3>
+          Technology
+          <br />
+          Across
+          <br />
+          Industries
+        </h3>
+
+        <p>
+          Engineering · AI · Cloud · Data
+        </p>
+
+      </div>
+
+      {/* Finance card */}
+      <div className="visual-industry-card finance-card">
+
+        <div className="visual-card-icon">
+          <Landmark size={19} />
+        </div>
+
+        <div>
+          <strong>Finance</strong>
+          <span>INTELLIGENT SYSTEMS</span>
+        </div>
+
+      </div>
+
+      {/* Logistics card */}
+      <div className="visual-industry-card logistics-card">
+
+        <div className="visual-card-icon">
+          <Truck size={19} />
+        </div>
+
+        <div>
+          <strong>Logistics</strong>
+          <span>OPERATIONAL INTELLIGENCE</span>
+        </div>
+
+      </div>
+
+      {/* Small floating dots */}
+      <span className="visual-dot dot-one" />
+      <span className="visual-dot dot-two" />
+      <span className="visual-dot dot-three" />
+
+    </div>
+  );
+}
 
 export default function Industries() {
   return (
@@ -230,10 +192,9 @@ export default function Industries() {
 
       <section className="industries-hero">
 
-        <div className="industries-hero-glow industries-glow-one" />
-        <div className="industries-hero-glow industries-glow-two" />
+        <div className="industries-hero-container">
 
-        <div className="industries-container industries-hero-grid">
+          {/* LEFT CONTENT */}
 
           <div className="industries-hero-content">
 
@@ -245,13 +206,16 @@ export default function Industries() {
             <h1>
               Technology built
               <br />
-              around <span>your industry.</span>
+              around{" "}
+              <span>your</span>
+              <br />
+              <span>industry.</span>
             </h1>
 
             <p className="industries-hero-description">
-              Every industry has different challenges, customers,
-              workflows, and regulations. We design technology
-              solutions around those realities — not around a
+              Every industry has different customers, workflows,
+              challenges, regulations, and opportunities. We design
+              technology around those realities — not around a
               one-size-fits-all template.
             </p>
 
@@ -259,64 +223,36 @@ export default function Industries() {
 
               <Link
                 to="/contact"
-                className="industries-primary-button"
+                className="primary-hero-button"
               >
                 Discuss Your Challenge
-                <ArrowUpRight size={17} />
+                <ArrowUpRight size={18} />
               </Link>
 
               <a
-                href="#industry-list"
-                className="industries-secondary-button"
+                href="#industries"
+                className="secondary-hero-button"
               >
                 Explore Industries
+                <ArrowRight size={18} />
               </a>
 
             </div>
 
-          </div>
-
-          <div className="industries-hero-visual">
-
-            <div className="hero-orbit hero-orbit-one" />
-            <div className="hero-orbit hero-orbit-two" />
-
-            <div className="hero-center-card">
-
-              <div className="hero-center-icon">
-                <BrainCircuit size={30} />
-              </div>
-
-              <span>ASCUBE INFOLABS</span>
-
-              <strong>
-                Technology
-                <br />
-                Across Industries
-              </strong>
-
+            <div className="hero-bottom-line">
+              <span />
               <p>
-                Engineering · AI · Cloud · Data
+                Built around your business.
+                <strong> Designed for what comes next.</strong>
               </p>
-
-            </div>
-
-            <div className="hero-floating-card hero-floating-one">
-              <Activity size={18} />
-              <span>Healthcare</span>
-            </div>
-
-            <div className="hero-floating-card hero-floating-two">
-              <Landmark size={18} />
-              <span>Finance</span>
-            </div>
-
-            <div className="hero-floating-card hero-floating-three">
-              <Truck size={18} />
-              <span>Logistics</span>
             </div>
 
           </div>
+
+
+          {/* RIGHT VISUAL */}
+
+          <HeroVisual />
 
         </div>
 
@@ -324,132 +260,87 @@ export default function Industries() {
 
 
       {/* =====================================================
-          INTRO
-      ===================================================== */}
-
-      <section className="industries-intro">
-
-        <div className="industries-container industries-intro-grid">
-
-          <div>
-            <span className="section-kicker">
-              INDUSTRIES WE SERVE
-            </span>
-
-            <h2>
-              Deep technology.
-              <br />
-              <span>Industry context.</span>
-            </h2>
-          </div>
-
-          <div className="industries-intro-copy">
-
-            <p>
-              We work across industries where technology can
-              meaningfully improve how organizations operate,
-              serve customers, and make decisions.
-            </p>
-
-            <p>
-              Our teams combine software engineering, artificial
-              intelligence, cloud, data, and product thinking to
-              build solutions that fit the way your business
-              actually works.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          INDUSTRY GRID
+          INDUSTRIES INTRO
       ===================================================== */}
 
       <section
-        className="industry-list-section"
-        id="industry-list"
+        className="industries-intro"
+        id="industries"
       >
 
-        <div className="industries-container">
+        <div className="industries-section-container">
 
-          <div className="industry-section-heading">
+          <div className="section-label">
+            <span />
+            INDUSTRIES WE SERVE
+          </div>
 
-            <div>
-              <span className="section-kicker">
-                OUR INDUSTRY EXPERTISE
-              </span>
+          <div className="industries-intro-grid">
 
-              <h2>
-                Solutions shaped by
-                <br />
-                <span>real-world problems.</span>
-              </h2>
-            </div>
+            <h2>
+              Technology that
+              <span> understands context.</span>
+            </h2>
 
             <p>
-              Explore how we apply technology across different
-              business environments.
+              The right technology solution starts with understanding
+              the industry behind the problem. Our teams combine
+              engineering expertise with domain-aware thinking to
+              create digital products that fit the way businesses
+              actually operate.
             </p>
 
           </div>
 
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          INDUSTRY CARDS
+      ===================================================== */}
+
+      <section className="industries-grid-section">
+
+        <div className="industries-section-container">
 
           <div className="industry-grid">
 
-            {industries.map((industry) => {
+            {industries.map((industry, index) => {
 
               const Icon = industry.icon;
 
               return (
                 <Link
+                  key={industry.slug}
                   to={`/industries/${industry.slug}`}
                   className="industry-card"
-                  key={industry.slug}
                 >
 
                   <div className="industry-card-top">
 
                     <span className="industry-number">
-                      {industry.number}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <div className="industry-card-icon">
+                    <div className="industry-icon">
                       <Icon size={21} />
                     </div>
 
-                    <ArrowUpRight
-                      size={19}
-                      className="industry-card-arrow"
-                    />
-
                   </div>
-
 
                   <div className="industry-card-content">
 
-                    <h3>{industry.title}</h3>
+                    <h3>
+                      {industry.title}
+                    </h3>
 
-                    <p>{industry.description}</p>
-
-                  </div>
-
-
-                  <div className="industry-capabilities">
-
-                    {industry.capabilities.slice(0, 3).map(
-                      (capability) => (
-                        <span key={capability}>
-                          {capability}
-                        </span>
-                      )
-                    )}
+                    <p>
+                      {industry.description}
+                    </p>
 
                   </div>
-
 
                   <div className="industry-card-footer">
 
@@ -457,77 +348,11 @@ export default function Industries() {
                       Explore industry
                     </span>
 
-                    <span className="industry-line" />
+                    <ArrowUpRight size={17} />
 
                   </div>
 
                 </Link>
-              );
-            })}
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          CAPABILITIES
-      ===================================================== */}
-
-      <section className="capabilities-section">
-
-        <div className="industries-container">
-
-          <div className="capabilities-heading">
-
-            <div>
-              <span className="section-kicker">
-                WHAT WE BRING
-              </span>
-
-              <h2>
-                Technology capabilities
-                <br />
-                <span>that travel across industries.</span>
-              </h2>
-            </div>
-
-            <p>
-              Industry knowledge matters. So does strong
-              engineering. Our core capabilities support
-              businesses across multiple sectors.
-            </p>
-
-          </div>
-
-
-          <div className="capabilities-grid">
-
-            {capabilities.map((capability) => {
-
-              const Icon = capability.icon;
-
-              return (
-                <div
-                  className="capability-card"
-                  key={capability.title}
-                >
-
-                  <div className="capability-icon">
-                    <Icon size={22} />
-                  </div>
-
-                  <div>
-
-                    <h3>{capability.title}</h3>
-
-                    <p>{capability.description}</p>
-
-                  </div>
-
-                </div>
               );
             })}
 
@@ -544,32 +369,31 @@ export default function Industries() {
 
       <section className="industries-cta">
 
-        <div className="industries-cta-glow" />
-
-        <div className="industries-container industries-cta-inner">
+        <div className="industries-cta-container">
 
           <div>
 
-            <span className="cta-kicker">
+            <span className="cta-label">
               HAVE A BUSINESS CHALLENGE?
             </span>
 
             <h2>
               Let's build technology
               <br />
-              that works for your industry.
+              around your reality.
             </h2>
 
             <p>
-              Tell us what you're trying to solve. We'll help
-              you explore the right technology approach.
+              Tell us what you're trying to solve.
+              We'll help you turn the challenge into
+              a scalable digital solution.
             </p>
 
           </div>
 
           <Link
             to="/contact"
-            className="industries-cta-button"
+            className="cta-button"
           >
             Start a Conversation
             <ArrowUpRight size={18} />
